@@ -22,7 +22,7 @@
          <section>    
             <div>
               <button onclick="
-                pickComputerMove();
+               const computerMove = pickComputerMove();
 
                 let result = '';
 
@@ -37,7 +37,7 @@
                 ">Rock</button>
 
               <button onclick="
-               pickComputerMove();
+               const computerMove = pickComputerMove();
 
                 let result = '';
 
@@ -53,7 +53,7 @@
               ">Paper</button>
 
               <button onclick="
-              pickComputerMove();
+              const computerMove = pickComputerMove();
 
 
                  let result = '';
@@ -71,13 +71,10 @@
          </section>
 
          <script>
-
-           let computerMove = '';
-           
             // Call the function to pick the computer's move when the button is clicked.
             function pickComputerMove () {
               const randomNum = Math.random();  // This line generates a random number between 0 inclusive and 1 exclusive.
-
+              let computerMove = '';
               if (randomNum >= 0 && randomNum < 1 / 3) {  // 1 / 3 is approximately 0.3333.
                 computerMove = 'Rock'; //If randomNum is between 0 inclusive and 0.3333 exclusive, it prints Rock.
               } else if (randomNum >= 1 / 3 && randomNum < 2 / 3) { // 2 / 3 is approximately 0.6667   randomNum must be at least 0.3333 and less than 0.6667. to print 'paper'
@@ -85,6 +82,7 @@
               } else if (randomNum >= 2 / 3 && randomNum < 1) {
                 computerMove = 'Scissors'; //If randomNum is between 0.6667 inclusive and 1 exclusive, it prints Scissors
               }
+              return computerMove;  // Returns the computer's move.
              }
          </script>
   </main>
