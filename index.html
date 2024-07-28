@@ -26,10 +26,21 @@
         <button onclick="playGame('Rock');">Rock</button>
         <button onclick="playGame('Paper');">Paper</button>
         <button onclick="playGame('Scissors');">Scissors</button>
+        <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        ">Reset Score</button> 
       </div>
     </section>
 
     <script>
+    // using objects to save scores
+    const score = {
+      wins: 0,
+      losses: 0,
+      ties: 0
+    }    
       // using parameters
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
@@ -63,7 +74,16 @@
           }
         }
 
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}.`);
+        if (result === 'You Win') {
+          score.wins += 1;
+        } else if (result === 'You Lose') {
+          score.losses += 1;
+        } else if (result === 'Tie') {
+          score.ties += 1;
+        }
+          // we are using multi-line strings here
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       }
 
       // Call the function to pick the computer's move when the button is clicked.
