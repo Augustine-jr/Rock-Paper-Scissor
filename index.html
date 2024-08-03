@@ -26,11 +26,14 @@
         <button onclick="playGame('Rock');">Rock</button>
         <button onclick="playGame('Paper');">Paper</button>
         <button onclick="playGame('Scissors');">Scissors</button>
+
+        <p class="js-score"></p>
         <button onclick="
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;
         localStorage.removeItem('score');
+        updateScoreElement();
         ">Reset Score</button> 
       </div>
     </section>
@@ -51,6 +54,8 @@
       };
     }
       */
+
+      updateScoreElement();
       // using parameters
       function playGame(playerMove) {
         const computerMove = pickComputerMove();
@@ -93,9 +98,16 @@
         }
 
         localStorage.setItem('score', JSON.stringify(score));
+
+         updateScoreElement();
           // we are using multi-line strings here
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
  Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+      }
+
+      function updateScoreElement() {
+        document.querySelector('.js-score')
+          .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
 
       // Call the function to pick the computer's move when the button is clicked.
