@@ -36,11 +36,11 @@
             <div class="text-[50px] text-[#000] uppercase font-bold">lose</div>
           </div>
           <div class="w-full  rounded-2xl flex items-center justify-center gap-[100px] p-4">
-            <div class="text-[50px] text-[#000] uppercase font-bold">0</div>
+            <div class="text-[50px] text-[#000] uppercase font-bold" id="winScore">0</div>
             <div class="text-[50px] text-[#000] uppercase font-bold">:</div>
-            <div class="text-[50px] text-[#000] uppercase font-bold">0</div>
+            <div class="text-[50px] text-[#000] uppercase font-bold" id="tieScore">0</div>
             <div class="text-[50px] text-[#000] uppercase font-bold">:</div>
-            <div class="text-[50px] text-[#000] uppercase font-bold">0</div>
+            <div class="text-[50px] text-[#000] uppercase font-bold" id="loseScore">0</div>
           </div>
           <div class="flex-row flex w-full items-center justify-center gap-[100px] p-4">
             <div class="size-[100px] border-4 rounded-[50%]" onclick="playGame('Rock');">
@@ -73,6 +73,9 @@
       </div>
     </section> -->
   </main>
+  <div id="backdrop" class="backdrop-blur-sm shadow-lg w-full h-full flex justify-center items-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+    <section class="w-[600px] h-[400px] rounded-3xl border bg-purple-600 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]  flex items-center justify-center"></section>
+  </div>
 </body>
 
 </html>

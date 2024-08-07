@@ -1,4 +1,7 @@
-    // using localStorage save scores
+   let winScore=document.querySelector("#winScore");
+   let loseScore=document.querySelector("#loseScore");
+   let tieScore=document.querySelector("#tieScore");
+   // using localStorage save scores
     let score = JSON.parse(localStorage.getItem('score')) || {
       wins: 0,
       losses: 0,
@@ -60,7 +63,16 @@
 
          updateScoreElement();
           // we are using multi-line strings here
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+
+          let backdrop=document.querySelector("#backdrop");
+            winScore.innerText=score.wins;
+          loseScore.innerText=score.losses;
+          tieScore.innerText=score.ties;
+          backdrop.addEventListener("click",()=>{
+            backdrop.style.display="none";
+          })
+          backdrop.style.display="flex";
+          let x= alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
  Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       }
 
