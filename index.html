@@ -50,6 +50,7 @@
             <div class="size-[100px] border-4 rounded-[50%]" onclick="playGame('Scissors');"><img src="src/icons8-hand-scissors-80.png" alt="" ></div>
           </div>
         </div>
+        <div class="w-[150px] h-[50px] bg-[#0d1117] rounded-2xl text-[#fff] font-serif text-[20px] text-center mt-4 drop-shadow-2xl" onclick="localStorage.removeItem('score');updateScoreElement();">Reset Score</div>
         
         <button onclick="playGame('Rock');">Rock</button>
         <button onclick="playGame('Paper');">Paper</button>
@@ -73,8 +74,8 @@
       </div>
     </section> -->
   </main>
-  <div id="backdrop" class="backdrop-blur-sm shadow-lg w-full h-full flex justify-center items-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
-    <section class="w-[600px] h-[400px] rounded-3xl border bg-purple-600 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]  flex items-center justify-center"></section>
+  <div id="backdrop" class="backdrop-blur-sm shadow-lg drop-shadow-2xl w-full h-full flex justify-center items-center absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]">
+    <section id="alert" class="w-[600px] h-[400px] rounded-3xl border bg-purple-600 absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]  flex items-center justify-center font-mono text-[20px] text-black"></section>
   </div>
 </body>
 

@@ -66,15 +66,18 @@
 
           let backdrop=document.querySelector("#backdrop");
             winScore.innerText=score.wins;
-          loseScore.innerText=score.losses;
-          tieScore.innerText=score.ties;
-          backdrop.addEventListener("click",()=>{
+            loseScore.innerText=score.losses;
+            tieScore.innerText=score.ties;
+            backdrop.addEventListener("click",()=>{
             backdrop.style.display="none";
           })
           backdrop.style.display="flex";
-          let x= alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+          let alert=document.querySelector("#alert");
+          let x= alert.innerText;
+          alert.innerText=(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
  Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
       }
+      alert.innerText=x;
 
       function updateScoreElement() {
         document.querySelector('.js-score')
