@@ -80,8 +80,11 @@
       alert.innerText=x;
 
       function updateScoreElement() {
-        document.querySelector('.js-score')
-          .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
+        winScore.innerText=score.wins;
+        loseScore.innerText=score.losses;
+        tieScore.innerText=score.ties;
+        // document.querySelector('.js-score')
+        //   .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
       }
 
       // Call the function to pick the computer's move when the button is clicked.
@@ -97,7 +100,6 @@
         }
         return computerMove;  // Returns the computer's move.
       }
-
       // steps on how this was made
       // 1. Each <button> has an onclick attribute that calls the playGame function with the respective move ('Rock', 'Paper', or 'Scissors') as an argument.
       // 2. const randomNum = Math.random(); generates a random number between 0 (inclusive) and 1 (exclusive).

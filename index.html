@@ -50,12 +50,18 @@
             <div class="size-[100px] border-4 rounded-[50%]" onclick="playGame('Scissors');"><img src="src/icons8-hand-scissors-80.png" alt="" ></div>
           </div>
         </div>
-        <div class="w-[150px] h-[50px] bg-[#0d1117] rounded-2xl text-[#fff] font-serif text-[20px] text-center mt-4 drop-shadow-2xl" onclick="localStorage.removeItem('score');updateScoreElement();">Reset Score</div>
+        <div class="w-[150px] h-[50px] bg-[#0d1117] rounded-2xl text-[#fff] font-serif text-[20px] text-center mt-4 drop-shadow-2xl" onclick="
+        score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+        ">Reset Score</div>
         
-        <button onclick="playGame('Rock');">Rock</button>
+        <!-- <button onclick="playGame('Rock');">Rock</button>
         <button onclick="playGame('Paper');">Paper</button>
         <button onclick="playGame('Scissors');">Scissors</button>
-        <p class="js-score"></p> 
+        <p class="js-score"></p>  -->
       </div>
     <!-- <section>
       <div>
