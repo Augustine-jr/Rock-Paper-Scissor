@@ -13,7 +13,7 @@
   <title>Rock, Paper, Scissors</title>
 </head>
 
-<body class="bg-gray-100 min-h-screen ">
+<body class="min-h-screen ">
   <!-- Header -->
   <!-- <header class="bg-blue-500 text-white p-4 text-center flex flex-col items-center justify-center">
     <h1 class="text-[50px] uppercase font-normal mb-4">Rock Paper Scissors</h1>
@@ -26,31 +26,31 @@
     - Update a score
     - Display the result and score in a popup.
     -->  <!-- Game board -->
-    <main class="bg-gray-400 min-h-screen flex flex-col items-center justify-center">
-      <div class="flex flex-col items-center justify-start p-5 w-[700px]  border">
-        <div class="w-[500px] h-[80px] border-8 rounded-md "></div>
-        <div class="w-full flex flex-col border m-2">
+    <main class=" min-h-screen flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center justify-start p-5 w-[700px] border-2 border-[#121616] rounded-2xl shadow-2xl bg-[#C09562]">
+            <div class="w-[500px] h-[80px] border-8 rounded-md text-[50px] font-semibold font-ui text-[#121616] text-center mt-4  ">Rock Paper Scissors</div>
+        <div class="w-full flex flex-col border-2 rounded-2xl m-2">
           <div class="w-full  rounded-2xl flex items-start justify-start gap-[165px] p-4">
-            <div class="text-[50px] text-[#000] uppercase font-bold">win</div>
-            <div class="text-[50px] text-[#000] uppercase font-bold">tie</div>
-            <div class="text-[50px] text-[#000] uppercase font-bold">lose</div>
+            <div class="text-[50px] text-[#121616] uppercase font-bold">win</div>
+            <div class="text-[50px] text-[#121616] uppercase font-bold">tie</div>
+            <div class="text-[50px] text-[#121616] uppercase font-bold">lose</div>
           </div>
           <div class="w-full  rounded-2xl flex items-center justify-center gap-[100px] p-4">
-            <div class="text-[50px] text-[#000] uppercase font-bold" id="winScore">0</div>
+            <div class="text-[50px] text-[#121616] uppercase font-bold" id="winScore">0</div>
             <div class="text-[50px] text-[#000] uppercase font-bold">:</div>
-            <div class="text-[50px] text-[#000] uppercase font-bold" id="tieScore">0</div>
+            <div class="text-[50px] text-[#121616] uppercase font-bold" id="tieScore">0</div>
             <div class="text-[50px] text-[#000] uppercase font-bold">:</div>
-            <div class="text-[50px] text-[#000] uppercase font-bold" id="loseScore">0</div>
+            <div class="text-[50px] text-[#121616] uppercase font-bold" id="loseScore">0</div>
           </div>
           <div class="flex-row flex w-full items-center justify-center gap-[100px] p-4">
-            <div class="size-[100px] border-4 rounded-[50%]" onclick="playGame('Rock');">
+            <div id="Rock" class="size-[100px] border-4 border-[#022B42] hover:scale-125 transition-transform transform hover:shadow-2xl  bg-[#d1cdc8] rounded-[50%] cursor-pointer relative" onclick="playGame('Rock');"> 
               <img src="src/right-facing-fist-svgrepo-com.svg" alt="">
             </div>
-            <div class="size-[100px] border-4 rounded-[50%] flex items-center justify-center pr-2" onclick="playGame('Paper');"><img src="src/palm-svgrepo-com.svg" alt=""></div>
-            <div class="size-[100px] border-4 rounded-[50%]" onclick="playGame('Scissors');"><img src="src/icons8-hand-scissors-80.png" alt="" ></div>
+            <div class="size-[100px] border-4 bg-[#d1cdc8] rounded-[50%] hover:scale-125 transition-transform transform hover:shadow-2xl border-[#022B42] flex items-center cursor-pointer justify-center pr-2" onclick="playGame('Paper');"><img src="src/palm-svgrepo-com.svg" alt=""></div>
+            <div class="size-[100px] border-4 bg-[#d1cdc8] rounded-[50%] hover:scale-125 transition-transform transform hover:shadow-2xl border-[#022B42] cursor-pointer" onclick="playGame('Scissors');"><img src="src/icons8-hand-scissors-80.png" alt="" ></div>
           </div>
         </div>
-        <div class="w-[150px] h-[50px] bg-[#0d1117] rounded-2xl text-[#fff] font-serif text-[20px] text-center mt-4 drop-shadow-2xl" onclick="
+        <div class="w-[150px] h-[50px] bg-[#45dfb1] border-[#121616] border-2 rounded-2xl text-[#121616] font-bold text-[20px] text-center mt-4 drop-shadow-2xl" onclick="
         score.wins = 0;
         score.losses = 0;
         score.ties = 0;

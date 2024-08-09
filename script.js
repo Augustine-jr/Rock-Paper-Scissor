@@ -108,3 +108,4 @@
       // 5. The result is displayed using an alert box.
       // 6. The pickComputerMove function is called when a button is clicked to generate the computer's move.
       // 7. The playGame function is called when a button is clicked to run the game logic.
+      
