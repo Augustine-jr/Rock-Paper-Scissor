@@ -5,12 +5,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock, Paper, Scissors</title>
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/poppins');
+    
+    *{
+       font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: rgb(25, 25, 25);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .title {
+      font-size: 1.875rem;
+      font-weight: bold;
+      /*font-family: 'Telegraf', sans-serif;*/
+    }
+
+    .move-icon {
+      height: 50px;
+    }
+
+    .move-button {
+      background-color: transparent;
+      border: 3px solid white;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      margin-right: 10px;
+    }
+  </style>
 </head>
 
 <body>
   <!-- Header -->
   <header>
-    <h1>Rock Paper Scissors</h1>
+    <h1 class="title">Rock Paper Scissors</h1>
     <p>Choose your weapon wisely and let's see who wins!</p>
   </header>
   <!--ALGORITHM FOR THIS 
@@ -23,10 +55,11 @@
   <main>
     <section>
       <div>
-        <button onclick="playGame('Rock');">Rock</button>
-        <button onclick="playGame('Paper');">Paper</button>
-        <button onclick="playGame('Scissors');">Scissors</button>
-
+        <button onclick="playGame('Rock');" class="move-button"><img src="./assests/rock-emoji.svg " class="move-icon"></button>
+        <button onclick="playGame('Paper');" class="move-button"><img src="./assests/paper-emoji.svg" class="move-icon"></button>
+        <button onclick="playGame('Scissors');" class="move-button"><img src="./assests/scissors-emoji.svg" class="move-icon"></button>
+        <p class="js-result"></p>
+        <p class="js-moves"></p>
         <p class="js-score"></p>
         <button onclick="
         score.wins = 0;
@@ -100,10 +133,21 @@
         localStorage.setItem('score', JSON.stringify(score));
 
          updateScoreElement();
-          // we are using multi-line strings here
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
- Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+
+          // Displaying result and moves in <p> elements
+         document.querySelector('.js-result')
+          .innerHTML = result;
+
+         document.querySelector('.js-moves')
+           .innerHTML = `You ${playerMove} - ${computerMove}
+           computer`;
       }
+        
+          // we are using multi-line strings here
+       /* alert(`You picked ${playerMove}. Computer picked ${computerMove}
+. ${result}
+ Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+      }*/
 
       function updateScoreElement() {
         document.querySelector('.js-score')
