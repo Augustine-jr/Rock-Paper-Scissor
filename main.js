@@ -21,29 +21,29 @@
         let result = '';
 
         if (playerMove === 'scissors') {
-          if (computerMove === 'Rock') {
+          if (computerMove === 'rock') {
             result = 'You Lose';
-          } else if (computerMove === 'Paper') {
+          } else if (computerMove === 'paper') {
             result = 'You Win';
-          } else if (computerMove === 'Scissors') {
+          } else if (computerMove === 'scissors') {
             result = 'Tie';
           }
 
         } else if (playerMove === 'paper') {
-          if (computerMove === 'Rock') {
+          if (computerMove === 'rock') {
             result = 'You Win';
-          } else if (computerMove === 'Paper') {
+          } else if (computerMove === 'paper') {
             result = 'Tie';
-          } else if (computerMove === 'Scissors') {
+          } else if (computerMove === 'scissors') {
             result = 'You Lose';
           }
           
         } else if (playerMove === 'rock') {
-          if (computerMove === 'Rock') {
+          if (computerMove === 'rock') {
             result = 'Tie';
-          } else if (computerMove === 'Paper') {
+          } else if (computerMove === 'paper') {
             result = 'You Lose';
-          } else if (computerMove === 'Scissors') {
+          } else if (computerMove === 'scissors') {
             result = 'You Win';
           }
         }
@@ -88,11 +88,11 @@
         const randomNum = Math.random();  // This line generates a random number between 0 inclusive and 1 exclusive.
         let computerMove = '';
         if (randomNum >= 0 && randomNum < 1 / 3) {  // 1 / 3 is approximately 0.3333.
-          computerMove = 'Rock'; // If randomNum is between 0 inclusive and 0.3333 exclusive, it picks Rock.
+          computerMove = 'rock'; // If randomNum is between 0 inclusive and 0.3333 exclusive, it picks Rock.
         } else if (randomNum >= 1 / 3 && randomNum < 2 / 3) { // 2 / 3 is approximately 0.6667. randomNum must be at least 0.3333 and less than 0.6667 to pick Paper.
-          computerMove = 'Paper'; // If randomNum is between 0.3333 inclusive and 0.6667 exclusive, it picks Paper.
+          computerMove = 'paper'; // If randomNum is between 0.3333 inclusive and 0.6667 exclusive, it picks Paper.
         } else if (randomNum >= 2 / 3 && randomNum < 1) {
-          computerMove = 'Scissors'; // If randomNum is between 0.6667 inclusive and 1 exclusive, it picks Scissors.
+          computerMove = 'scissors'; // If randomNum is between 0.6667 inclusive and 1 exclusive, it picks Scissors.
         }
         return computerMove;  // Returns the computer's move.
       }
