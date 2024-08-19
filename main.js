@@ -69,7 +69,6 @@
           <img src="./assests/${playerMove}-emoji.svg" class="move-icon">
           <img src="./assests/${computerMove}-emoji.svg" class="move-icon">
           Computer`;
-          console.log(document.querySelector('.js-moves').innerHTML)
           
       }
           // we are using multi-line strings here
