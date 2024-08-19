@@ -1,0 +1,104 @@
+ @import url('https://fonts.cdnfonts.com/css/poppins');
+
+ * {
+   font-family: 'Poppins', sans-serif;
+   box-sizing: border-box;
+ }
+
+ body {
+   background-color: rgb(25, 25, 25);
+   color: white;
+   font-family: 'Poppins', sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   margin: 0;
+   padding: 20px;
+ }
+
+ .game-container {
+   text-align: center;
+   max-width: 600px;
+   width: 100%;
+ }
+
+ .title {
+   font-size: 1.875rem;
+   font-weight: bold;
+ }
+
+ header p {
+   margin-bottom: 30px;
+ }
+
+ .move-icon {
+   height: 50px;
+ }
+
+ .moves-container {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin-bottom: 30px;
+ }
+
+ .move-button {
+   background-color: transparent;
+   border: 3px solid white;
+   width: 120px;
+   height: 120px;
+   border-radius: 60px;
+   margin-right: 10px;
+   cursor: pointer;
+  transition: transform 0.2s;
+ }
+
+ .move-button:hover {
+   transform: scale(1.05);
+ }
+
+ .result {
+   font-size: 25px;
+   font-weight: bold;
+   margin-top: 50px;
+ }
+
+ .score {
+   margin-top: 30px;
+ }
+
+ .reset-score-button {
+   background-color: white;
+   border: none;
+   font-size: 15px;
+   padding: 8px 15px;
+   cursor: pointer;
+    margin-top: 20px;
+      transition: background-color 0.2s, color 0.2s;
+ }
+
+ .reset-score-button:hover {
+   background-color: rgb(200, 200, 200);
+ }
+
+ /* Responsive design */
+ @media (max-width: 480px) {
+   .title {
+     font-size: 1.5rem;
+   }
+
+   .move-button {
+     width: 100px;
+     height: 100px;
+   }
+
+   .move-icon {
+     height: 40px;
+   }
+
+   .result {
+     font-size: 20px;
+   }
+ }
