@@ -20,7 +20,7 @@
         const computerMove = pickComputerMove();
         let result = '';
 
-        if (playerMove === 'Scissors') {
+        if (playerMove === 'scissors') {
           if (computerMove === 'Rock') {
             result = 'You Lose';
           } else if (computerMove === 'Paper') {
@@ -29,7 +29,7 @@
             result = 'Tie';
           }
 
-        } else if (playerMove === 'Paper') {
+        } else if (playerMove === 'paper') {
           if (computerMove === 'Rock') {
             result = 'You Win';
           } else if (computerMove === 'Paper') {
@@ -38,7 +38,7 @@
             result = 'You Lose';
           }
           
-        } else if (playerMove === 'Rock') {
+        } else if (playerMove === 'rock') {
           if (computerMove === 'Rock') {
             result = 'Tie';
           } else if (computerMove === 'Paper') {
@@ -69,6 +69,7 @@
           <img src="./assests/${playerMove}-emoji.svg" class="move-icon">
           <img src="./assests/${computerMove}-emoji.svg" class="move-icon">
           Computer`;
+          console.log(document.querySelector('.js-moves').innerHTML)
           
       }
           // we are using multi-line strings here
