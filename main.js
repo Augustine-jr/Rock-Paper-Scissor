@@ -15,8 +15,31 @@
       */
 
       updateScoreElement();
-      // using parameters
-      function playGame(playerMove) {
+    
+
+      let isAutoPlaying = false; // This variable tracks whether the autoplay feature is currently active or not.
+let intervalId; // This variable will store the ID of the interval, so it can be cleared later.
+
+function autoPlay() {
+  // This function toggles the autoplay feature on and off.
+  
+  if (!isAutoPlaying) {
+    // If autoplay is not active, start it by setting an interval.
+    intervalId = setInterval(function() {
+      // The interval will execute this function every 1000 milliseconds (1 second).
+      const playerMove = pickComputerMove(); // Pick a random move for the player.
+      playGame(playerMove); // Play the game using the randomly selected move.
+    }, 1000);
+    
+    isAutoPlaying = true; // Set the autoplay status to active.
+  } else {
+    // If autoplay is already active, stop it.
+    clearInterval(intervalId); // Clear the interval using the stored interval ID.
+    isAutoPlaying = false; // Set the autoplay status to inactive.
+  }
+}
+
+               function playGame(playerMove) {
         const computerMove = pickComputerMove();
         let result = '';
 
