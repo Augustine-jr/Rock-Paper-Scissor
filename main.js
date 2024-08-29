@@ -4,6 +4,8 @@
       losses: 0,
       ties: 0
     }
+
+    //const computerChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * (3-0) + 0)]
     /*
     if (!score) {
       score = {
@@ -20,12 +22,15 @@
       let isAutoPlaying = false; // This variable tracks whether the autoplay feature is currently active or not.
 let intervalId; // This variable will store the ID of the interval, so it can be cleared later.
 
-function autoPlay() {
+/*const autoPlay = () => {
+
+};*/
+function autoPlay() {  // i left this on a regular function syntax because it is easier to read and Hoisting(which means we can call this function before we create it)
   // This function toggles the autoplay feature on and off.
   
   if (!isAutoPlaying) {
     // If autoplay is not active, start it by setting an interval.
-    intervalId = setInterval(function() {
+    intervalId = setInterval(() => {
       // The interval will execute this function every 1000 milliseconds (1 second).
       const playerMove = pickComputerMove(); // Pick a random move for the player.
       playGame(playerMove); // Play the game using the randomly selected move.
@@ -39,7 +44,7 @@ function autoPlay() {
   }
 }
 
-               function playGame(playerMove) {
+        function playGame(playerMove) {
         const computerMove = pickComputerMove();
         let result = '';
 
