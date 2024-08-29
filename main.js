@@ -67,6 +67,16 @@ document.querySelector('.js-rock-button')
   /*autoPlay (without parentheses): This passes the autoPlay function itself to addEventListener, meaning the function will be called when the event (click) occurs.
 autoPlay() (with parentheses): This would immediately invoke the function and pass its return value (which is undefined in this case) to addEventListener, which is not what you want.*/
 
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r') {
+    playGame('rock');
+  } else if (event.key === 'p') {
+    playGame('paper');
+  } else if (event.key ==='s') {
+    playGame('scissors');
+  }
+}); //"Added keydown event listener to document body to trigger playGame function on 'r', 'p', and 's' key presses."
+
         function playGame(playerMove) {
         const computerMove = pickComputerMove();
         let result = '';
