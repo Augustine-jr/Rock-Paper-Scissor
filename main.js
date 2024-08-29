@@ -44,6 +44,29 @@ function autoPlay() {  // i left this on a regular function syntax because it is
   }
 }
 
+document.querySelector('.js-rock-button')
+  .addEventListener('click', () => playGame('rock'));
+
+  document.querySelector('.js-paper-button')
+  .addEventListener('click', () => playGame('paper'));
+  
+  document.querySelector('.js-scissors-button')
+  .addEventListener('click', () => playGame('scissors'));
+
+  document.querySelector('.js-reset-button')
+  .addEventListener('click', () => {
+    score.wins = 0;
+        score.losses = 0;
+        score.ties = 0;
+        localStorage.removeItem('score');
+        updateScoreElement();})
+
+  document.querySelector('.js-autoplay')
+  .addEventListener('click', autoPlay); //passing the function autoPlay as a reference, without parentheses, to addEventListener so that it only gets called when the click event occurs
+
+  /*autoPlay (without parentheses): This passes the autoPlay function itself to addEventListener, meaning the function will be called when the event (click) occurs.
+autoPlay() (with parentheses): This would immediately invoke the function and pass its return value (which is undefined in this case) to addEventListener, which is not what you want.*/
+
         function playGame(playerMove) {
         const computerMove = pickComputerMove();
         let result = '';
